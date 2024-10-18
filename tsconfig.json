@@ -31,10 +31,12 @@
     "types": [
       "jest",
       "node"
-    ]
+    ],
+    "moduleResolution": "node"
   },
   "include": [
-    "**/*.ts"
+    "**/*.ts",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
