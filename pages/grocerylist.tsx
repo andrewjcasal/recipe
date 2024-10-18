@@ -38,7 +38,7 @@ function GroceryList() {
     }
   };
 
-  const handleRemoveItem = (index) => {
+  const handleRemoveItem = (index: number) => {
     setItems(items.filter((item, i) => i !== index));
   };
 
