@@ -1,13 +1,14 @@
 import firebase from 'firebase-admin';
 import dotenv from 'dotenv';
 
-const result = dotenv.config();
-
-if (result.error) {
-    console.error('Error loading .env file:', result.error);
-} else {
-    console.log('.env file loaded successfully');
-    console.log('Available environment variables:', result.parsed);
+if (process.env.NODE_ENV !== 'production') {
+    const result = dotenv.config();
+    if (result.error) {
+        console.error('Error loading .env file:', result.error);
+    } else {
+        console.log('.env file loaded successfully');
+        console.log('Available environment variables:', result.parsed);
+    }
 }
 
 interface ItemProps {
