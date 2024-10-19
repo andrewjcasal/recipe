@@ -1,5 +1,4 @@
 import firebase from 'firebase-admin';
-import serviceAccount from '@/config/serviceAccountKey.json';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -11,9 +10,9 @@ interface ItemProps {
 if (!firebase.apps.length) {
     firebase.initializeApp({
         credential: firebase.credential.cert({
-            projectId: serviceAccount.project_id,
-            clientEmail: serviceAccount.client_email,
-            privateKey: serviceAccount.private_key
+            projectId: process.env.FIREBASE_PROJECT_ID,
+            clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+            privateKey: process.env.FIREBASE_PRIVATE_KEY,
         }),
         databaseURL: process.env.FIREBASE_DATABASE_URL,
     });
