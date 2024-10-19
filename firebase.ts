@@ -7,6 +7,11 @@ interface ItemProps {
     name: string;
 }
 
+console.log('FIREBASE_PROJECT_ID:', process.env.FIREBASE_PROJECT_ID);
+console.log('FIREBASE_CLIENT_EMAIL:', process.env.FIREBASE_CLIENT_EMAIL);
+console.log('FIREBASE_DATABASE_URL:', process.env.FIREBASE_DATABASE_URL);
+console.log('FIREBASE_PRIVATE_KEY:', process.env.FIREBASE_PRIVATE_KEY);
+
 if (!firebase.apps.length) {
     firebase.initializeApp({
         credential: firebase.credential.cert({
